@@ -9,20 +9,21 @@ variables:
   TF_VAR_proxmox_user: $PROXMOX_USER
   TF_VAR_proxmox_password: $PROXMOX_PASSWORD
 
-before_script:
-  - cd $TF_ROOT
-  - terraform version
+default:
+  image: hashicorp/terraform:latest
+  before_script:
+    - cd $TF_ROOT
+    - terraform version
+    - terraform init -input=false
 
 validate:
   stage: validate
   script:
-    - terraform init -input=false
     - terraform validate
 
 plan:
   stage: plan
   script:
-    - terraform init -input=false
     - terraform plan -out=tfplan
   artifacts:
     paths:
@@ -32,7 +33,6 @@ plan:
 apply:
   stage: apply
   script:
-    - terraform init -input=false
     - terraform apply -auto-approve tfplan
   dependencies:
     - plan
