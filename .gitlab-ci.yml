@@ -9,7 +9,9 @@ variables:
   TF_VAR_proxmox_password: $PROXMOX_PASSWORD
 
 default:
-  image: hashicorp/terraform:1.12.2
+  image: hashicorp/terraform:latest
+  entrypoint: [""]
+
   before_script:
     - cd src
     - terraform version
@@ -23,16 +25,15 @@ validate:
 plan:
   stage: plan
   script:
-    - terraform plan -out=tfplan
+    - terraform plan -out=main.tfplan
   artifacts:
     paths:
-      - src/tfplan
+      - src/main.tfplan
     expire_in: 1 hour
 
 apply:
   stage: apply
   script:
-    - terraform apply -auto-approve tfplan
+    - terraform apply -auto-approve main.tfplan
   dependencies:
     - plan
-  when: manual
