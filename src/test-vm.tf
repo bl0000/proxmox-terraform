@@ -20,12 +20,13 @@ resource "proxmox_virtual_environment_vm" "ubuntu_clone" {
     }
     ip_config {
       ipv4 {
-        address = "dhcp"
+        address = "10.0.0.10"
+        gateway = "10.0.0.2"
       }
     }
   }
 }
 
 output "vm_ipv4_address" {
-  value = proxmox_virtual_environment_vm.ubuntu_clone.ipv4_addresses[1][0]
+  value = proxmox_virtual_environment_vm.ubuntu_clone.ipv4_addresses
 }
