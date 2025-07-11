@@ -9,8 +9,9 @@ variables:
   TF_VAR_proxmox_password: $PROXMOX_PASSWORD
 
 default:
-  image: hashicorp/terraform:latest
-  entrypoint: [""]
+  image: 
+    name: hashicorp/terraform:latest
+    entrypoint: [""]
 
   before_script:
     - cd src
