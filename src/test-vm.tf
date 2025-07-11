@@ -1,6 +1,6 @@
 resource "proxmox_virtual_environment_vm" "ubuntu_clone" {
   name      = "test01"
-  node_name = "pve"
+  node_name = "proxmox01"
 
   clone {
     vm_id = 104 # debian12-template
