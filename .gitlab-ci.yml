@@ -4,7 +4,6 @@ stages:
   - apply
 
 variables:
-  TF_ROOT: "src"
   TF_VAR_proxmox_api_url: $PROXMOX_API_URL
   TF_VAR_proxmox_user: $PROXMOX_USER
   TF_VAR_proxmox_password: $PROXMOX_PASSWORD
@@ -12,7 +11,7 @@ variables:
 default:
   image: hashicorp/terraform:1.12.2
   before_script:
-    - cd $TF_ROOT
+    - cd src
     - terraform version
     - terraform init -input=false
 
