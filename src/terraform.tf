@@ -8,7 +8,3 @@ terraform {
 
    backend "http" {}
 }
-
-proxmox = {
-  source = "bpg/proxmox"
-}
