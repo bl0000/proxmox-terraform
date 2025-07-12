@@ -1,4 +1,4 @@
-resource "proxmox_virtual_environment_vm" "ubuntu_clone" {
+resource "proxmox_virtual_environment_vm" "test01" {
   name      = "test01"
   node_name = "proxmox01"
 
@@ -7,7 +7,7 @@ resource "proxmox_virtual_environment_vm" "ubuntu_clone" {
   }
 
   agent {
-    enabled = true
+    enabled = true # Qemu
   }
 
   memory {
@@ -18,11 +18,17 @@ resource "proxmox_virtual_environment_vm" "ubuntu_clone" {
     dns {
       servers = ["1.1.1.1"]
     }
+
     ip_config {
       ipv4 {
-        address = "10.0.0.10"
+        address = "10.0.0.10/24"
         gateway = "10.0.0.2"
       }
+    }
+
+    user_account {
+      username = "ben"
+      keys = [var.ssh_key]
     }
   }
 }
