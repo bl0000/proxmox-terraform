@@ -1,5 +1,6 @@
-resource "proxmox_virtual_environment_vm" "test01" {
-  name      = "test01"
+resource "proxmox_virtual_environment_vm" "test02" {
+  name      = "test02"
+  description = "Terraform testing VM"
   node_name = "proxmox01"
 
   clone {
@@ -10,8 +11,26 @@ resource "proxmox_virtual_environment_vm" "test01" {
     enabled = true # Qemu
   }
 
+  cpu {
+    cores = 2
+    type = "x86-64-v2-AES"
+  }
+
   memory {
     dedicated = 2048
+    floating = 2048 # Enables ballooning
+  }
+
+  disk {
+    datastore_id = "nvme-lvm"
+    backup = true
+    cache = "writeback"
+    discard = "on"
+    iothread = true
+    interface = "scsi0"
+    replicate = true
+
+    size = 30
   }
 
   initialization {
