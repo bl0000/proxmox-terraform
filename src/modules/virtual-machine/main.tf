@@ -1,6 +1,5 @@
-resource "proxmox_virtual_environment_vm" "test03" {
-  name      = "test03"
-  description = "Terraform testing VM"
+resource "proxmox_virtual_environment_vm" "vm" {
+  name      = var.vm_name
   node_name = "proxmox01"
 
   clone {
@@ -12,13 +11,13 @@ resource "proxmox_virtual_environment_vm" "test03" {
   }
 
   cpu {
-    cores = 2
+    cores = var.cores
     type = "x86-64-v2-AES"
   }
 
   memory {
-    dedicated = 2048
-    floating = 2048 # Enables ballooning
+    dedicated = var.memory
+    floating = var.memory # Enables ballooning
   }
 
   disk {
@@ -30,18 +29,18 @@ resource "proxmox_virtual_environment_vm" "test03" {
     interface = "scsi0"
     replicate = true
 
-    size = 40
+    size = var.disk_size
   }
 
   initialization {
     dns {
-      servers = ["1.1.1.1"]
+      servers = var.dns_servers
     }
 
     ip_config {
       ipv4 {
-        address = "10.0.0.13/24"
-        gateway = "10.0.0.2"
+        address = var.ip_address
+        gateway = var.gateway
       }
     }
 
