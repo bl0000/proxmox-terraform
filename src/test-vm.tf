@@ -21,7 +21,7 @@ resource "proxmox_virtual_environment_vm" "test01" {
 
     ip_config {
       ipv4 {
-        address = "10.0.0.10/24"
+        address = "10.0.0.11/24"
         gateway = "10.0.0.2"
       }
     }
