@@ -18,13 +18,13 @@ default:
     - cd src
     - terraform version
     - terraform init -backend-config="address=http://gitlab.bl-lab.net/api/v4/projects/6/terraform/state/$TF_STATE_NAME" \
-    -backend-config="lock_address=http://gitlab.bl-lab.net/api/v4/projects/6/terraform/state/$TF_STATE_NAME/lock" \
-    -backend-config="unlock_address=http://gitlab.bl-lab.net/api/v4/projects/6/terraform/state/$TF_STATE_NAME/lock" \
-    -backend-config="username=ben" \
-    -backend-config="password=$GITLAB_ACCESS_TOKEN" \
-    -backend-config="lock_method=POST" \
-    -backend-config="unlock_method=DELETE" \
-    -backend-config="retry_wait_min=5"
+      -backend-config="lock_address=http://gitlab.bl-lab.net/api/v4/projects/6/terraform/state/$TF_STATE_NAME/lock" \
+      -backend-config="unlock_address=http://gitlab.bl-lab.net/api/v4/projects/6/terraform/state/$TF_STATE_NAME/lock" \
+      -backend-config="username=ben" \
+      -backend-config="password=$GITLAB_ACCESS_TOKEN" \
+      -backend-config="lock_method=POST" \
+      -backend-config="unlock_method=DELETE" \
+      -backend-config="retry_wait_min=5"
 
 validate:
   stage: validate
