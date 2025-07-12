@@ -9,4 +9,6 @@ terraform {
    backend "http" {}
 }
 
-provider "proxmox" {}
+proxmox = {
+  source = "bpg/proxmox"
+}

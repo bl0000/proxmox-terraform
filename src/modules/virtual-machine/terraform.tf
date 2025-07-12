@@ -7,4 +7,6 @@ terraform {
   }
 }
 
-provider "proxmox" {}
+proxmox = {
+  source = "bpg/proxmox"
+}
