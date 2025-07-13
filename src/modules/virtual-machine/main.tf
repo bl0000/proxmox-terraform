@@ -12,24 +12,26 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   cpu {
     cores = var.cores
-    type = "x86-64-v2-AES"
+    type  = "x86-64-v2-AES"
   }
 
   memory {
     dedicated = var.memory
-    floating = var.memory # Enables ballooning
+    floating  = var.memory # Enables ballooning
   }
 
-  disk {
-    datastore_id = "nvme-lvm"
-    backup = true
-    cache = "writeback"
-    discard = "on"
-    iothread = true
-    interface = "scsi0"
-    replicate = true
-
-    size = var.disk_size
+  dynamic "disk" {
+    for_each = var.disks
+    content {
+      interface    = "scsi${disk.key}" # Auto-increment scsi0, scsi1 etc
+      size         = disk.value.size
+      datastore_id = lookup(disk.value, "datastore_id", "nvme-lvm")
+      backup       = disk.value.backup
+      cache        = disk.value.cache
+      discard      = disk.value.discard
+      iothread     = disk.value.iothread
+      replicate    = disk.value.replicate
+    }
   }
 
   initialization {
@@ -46,7 +48,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
     user_account {
       username = "ben"
-      keys = [var.ssh_key]
+      keys     = [var.ssh_key]
     }
   }
 }
