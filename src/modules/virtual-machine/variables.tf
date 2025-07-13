@@ -27,6 +27,10 @@ variable "disks" {
   default = []
 }
 
+variable "vlan_tag" {
+  type = number
+}
+
 variable "dns_servers" {
   type    = list(string)
   default = ["1.1.1.1"]

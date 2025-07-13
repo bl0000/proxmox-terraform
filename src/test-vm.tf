@@ -11,6 +11,8 @@ module "test06" {
     }
   ]
 
+  vlan_tag = 1010
+
   ip_address = "10.0.0.6/24"
   gateway    = "10.0.0.2"
 }

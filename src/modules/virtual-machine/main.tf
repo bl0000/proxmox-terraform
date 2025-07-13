@@ -35,6 +35,10 @@ resource "proxmox_virtual_environment_vm" "vm" {
     }
   }
 
+  network_device {
+    vlan_id = var.vlan_tag
+  }
+
   initialization {
     dns {
       servers = var.dns_servers
