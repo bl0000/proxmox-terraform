@@ -8,6 +8,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
 
   agent {
     enabled = true # Qemu
+    trim    = true # FSTRIM on VM migration
   }
 
   cpu {
