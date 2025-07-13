@@ -51,6 +51,6 @@ module "kube03" {
 
   vlan_tag = 1008
 
-  ip_address = "10.15.1.211/28"
+  ip_address = "10.15.1.212/28"
   gateway    = "10.15.1.209"
 }
