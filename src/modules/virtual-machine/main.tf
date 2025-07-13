@@ -56,4 +56,10 @@ resource "proxmox_virtual_environment_vm" "vm" {
       keys     = [var.ssh_key]
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      node_name
+    ]
+  }
 }
