@@ -19,7 +19,7 @@ variable "disks" {
     size         = number
     datastore_id = optional(string)
     backup       = optional(bool, true)
-    cache        = optional(string, "writebackup")
+    cache        = optional(string, "writeback")
     discard      = optional(string, "on")
     iothread     = optional(bool, true)
     replicate    = optional(bool, true)
