@@ -9,11 +9,12 @@ resource "proxmox_virtual_environment_vm" "vm" {
   agent {
     enabled = true # Qemu
     trim    = true # FSTRIM on VM migration
+    type = "virtio"
   }
 
   cpu {
     cores = var.cores
-    type  = "x86-64-v2-AES"
+    type  = "x86-64-v3"
   }
 
   memory {
