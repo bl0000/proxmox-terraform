@@ -8,6 +8,9 @@ module "kube01" {
   disks = [
     {
       size = 25
+    },
+    {
+      size = 50
     }
   ]
 
@@ -27,6 +30,9 @@ module "kube02" {
   disks = [
     {
       size = 25
+    },
+    {
+      size = 50
     }
   ]
 
@@ -46,6 +52,9 @@ module "kube03" {
   disks = [
     {
       size = 25
+    },
+    {
+      size = 50
     }
   ]
 
