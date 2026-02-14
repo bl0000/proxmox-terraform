@@ -1,3 +1,3 @@
 # Virtual Machine
 
-Template for creating VMs
+Template for creating Windows VMs, based on the existing virtual-machine module.
