@@ -43,12 +43,12 @@ plan:
 
 apply:
   stage: apply
-    rules:
-    # Only apply changes in the main branch
-    - if: '$CI_COMMIT_BRANCH == "main" && $CI_PIPELINE_SOURCE == "push"'
-      when: on_success
-      
-    - when: never
+  rules:
+  # Only apply changes in the main branch
+  - if: '$CI_COMMIT_BRANCH == "main" && $CI_PIPELINE_SOURCE == "push"'
+    when: on_success
+    
+  - when: never
   script:
     - terraform apply -auto-approve main.tfplan
   dependencies:
