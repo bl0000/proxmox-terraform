@@ -48,6 +48,6 @@ variable "gateway" {
 
 variable "ssh_key" {
   type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN/u9nRP8/SiliMeSlImsUubqvwNCJa+Tf3XOtp63Csp ben@bl-lab.net"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFUKKZcR/0thrAVg45Z/KrznGRhGFifBM7aiBA6JQ73M ben@DESKTOP-3H53S6D"
   description = "SSH public key"
 }
