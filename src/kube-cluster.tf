@@ -3,7 +3,7 @@ module "kube01" {
   vm_name = "kube01"
 
   cores  = 2
-  memory = 4096
+  memory = 6144
 
   disks = [
     {
@@ -27,7 +27,7 @@ module "kube02" {
   vm_name = "kube02"
 
   cores  = 2
-  memory = 4096
+  memory = 6144
 
   disks = [
     {
@@ -51,7 +51,7 @@ module "kube03" {
   vm_name = "kube03"
 
   cores  = 2
-  memory = 4096
+  memory = 6144
 
   disks = [
     {
