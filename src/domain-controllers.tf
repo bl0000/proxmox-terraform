@@ -1,5 +1,5 @@
 module "dc01" {
-  source  = "./modules/virtual-machine"
+  source  = "./modules/windows-virtual-machine"
   vm_name = "dc01"
 
   cores  = 4
