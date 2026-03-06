@@ -13,8 +13,8 @@ module "dc01" {
   ]
 
   ## Need to create new VLAN
-  vlan_tag = 1008
+  vlan_tag = 1011
 
-  ip_address = "10.15.1.210/28"
-  gateway    = "10.15.1.209"
+  ip_address = "10.15.1.242/28"
+  gateway    = "10.15.1.241"
 }
