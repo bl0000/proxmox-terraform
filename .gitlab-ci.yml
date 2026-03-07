@@ -8,7 +8,7 @@ variables:
   TF_VAR_proxmox_user: $PROXMOX_USER
   TF_VAR_proxmox_password: $PROXMOX_PASSWORD
   TF_STATE_NAME: tfstate
-  TF_VAR_WINDOWS_TEMP_PW: $TF_WINDOWS_TEMP_PW 
+  TF_VAR_windows_temp_pw: $TF_WINDOWS_TEMP_PW 
 
 default:
   image: 
