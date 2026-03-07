@@ -43,3 +43,9 @@ variable "ip_address" {
 variable "gateway" {
   type = string
 }
+
+variable "windows_temp_pw" {
+  description = "Maps to the GitLab variable"
+  type = string
+  sensitive = true
+}

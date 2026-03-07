@@ -50,6 +50,11 @@ resource "proxmox_virtual_environment_vm" "vm" {
         gateway = var.gateway
       }
     }
+
+    user_account {
+      username = "ben"
+      password = var.windows_temp_pw
+    }
   }
 
   lifecycle {
