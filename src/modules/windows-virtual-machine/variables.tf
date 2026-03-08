@@ -33,7 +33,7 @@ variable "vlan_tag" {
 
 variable "dns_servers" {
   type    = list(string)
-  default = ["1.1.1.1"]
+  default = ["10.15.1.242"] # dc01
 }
 
 variable "ip_address" {
@@ -42,9 +42,4 @@ variable "ip_address" {
 
 variable "gateway" {
   type = string
-}
-
-variable "windows_temp_pw" {
-  type = string
-  sensitive = true
 }
