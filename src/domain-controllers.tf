@@ -17,6 +17,4 @@ module "dc01" {
 
   ip_address = "10.15.1.242/28"
   gateway    = "10.15.1.241"
-
-  windows_temp_pw = var.windows_temp_pw
 }

@@ -43,8 +43,3 @@ variable "ip_address" {
 variable "gateway" {
   type = string
 }
-
-variable "windows_temp_pw" {
-  type = string
-  sensitive = true
-}
