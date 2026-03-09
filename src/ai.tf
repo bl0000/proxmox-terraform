@@ -9,7 +9,7 @@ module "ai01" {
 
   disks = [
     {
-      size = 35
+      size = 45
       datastore_id = "nvme-lvm"
     }
   ]
