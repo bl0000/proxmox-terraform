@@ -3,7 +3,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
   node_name = "proxmox02"
 
   clone {
-    vm_id = 112 # w2k22-template
+    vm_id = 118 # w2k22-template
   }
 
   agent {
@@ -50,6 +50,11 @@ resource "proxmox_virtual_environment_vm" "vm" {
         gateway = var.gateway
       }
     }
+
+    user_account {
+      password = var.windows_temp_pw
+    }
+
   }
 
   lifecycle {
