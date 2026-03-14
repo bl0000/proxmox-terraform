@@ -3,7 +3,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
   node_name = "proxmox02"
 
   clone {
-    vm_id = 118 # w2k22-template
+    vm_id = 900 # w2k22-template
   }
 
   agent {
