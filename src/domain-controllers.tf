@@ -19,4 +19,6 @@ module "dc01" {
   gateway    = "10.15.1.241"
   
   dns_servers = ["1.1.1.1"]
+
+  windows_temp_pw = var.windows_temp_pw
 }

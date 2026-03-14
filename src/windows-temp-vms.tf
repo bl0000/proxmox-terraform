@@ -19,6 +19,8 @@ module "server01" {
 
   ip_address = "10.15.1.243/28"
   gateway    = "10.15.1.241"
+
+  windows_temp_pw = var.windows_temp_pw
 }
 
 module "server02" {
@@ -40,4 +42,6 @@ module "server02" {
 
   ip_address = "10.15.1.244/28"
   gateway    = "10.15.1.241"
+
+  windows_temp_pw = var.windows_temp_pw
 }
