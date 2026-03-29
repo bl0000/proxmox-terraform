@@ -8,7 +8,7 @@ module "dns01" {
   disks = [
     {
       size = 15
-      datastore_id = "local-lvm"
+      datastore_id = "nvme-lvm"
     }
   ]
 
@@ -16,8 +16,4 @@ module "dns01" {
 
   ip_address = "10.15.1.146/28"
   gateway    = "10.15.1.145"
-
-  dns_servers = ["1.1.1.1"]
-
-  ssh_key = var.ssh_key
 }
