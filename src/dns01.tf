@@ -7,7 +7,7 @@ module "dns01" {
 
   disks = [
     {
-      size = 15
+      size = 20
       datastore_id = "nvme-lvm"
     }
   ]
