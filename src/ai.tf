@@ -20,3 +20,22 @@ module "ai01" {
   gateway    = "10.15.1.225"
 }
 
+module "openclaw01" {
+  source  = "./modules/virtual-machine"
+  vm_name = "openclaw01"
+
+  cores  = 2
+  memory = 2048
+
+  disks = [
+    {
+      size = 20
+      datastore_id = "nvme-lvm"
+    }
+  ]
+
+  vlan_tag = 1009
+
+  ip_address = "10.15.1.227/28"
+  gateway    = "10.15.1.225"
+}
