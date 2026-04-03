@@ -24,12 +24,12 @@ module "openclaw01" {
   source  = "./modules/virtual-machine"
   vm_name = "openclaw01"
 
-  cores  = 2
-  memory = 2048
+  cores  = 4
+  memory = 4196
 
   disks = [
     {
-      size = 20
+      size = 25
       datastore_id = "nvme-lvm"
     }
   ]
