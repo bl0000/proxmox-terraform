@@ -7,7 +7,7 @@ module "kube01" {
 
   disks = [
     {
-      size = 25
+      size = 30
       datastore_id = "nvme-lvm"
     },
     {
@@ -31,7 +31,7 @@ module "kube02" {
 
   disks = [
     {
-      size = 25
+      size = 30
       datastore_id = "nvme-lvm"
     },
     {
@@ -55,7 +55,7 @@ module "kube03" {
 
   disks = [
     {
-      size = 25
+      size = 30
       datastore_id = "nvme-lvm"
     },
     {
