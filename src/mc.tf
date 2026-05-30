@@ -3,7 +3,7 @@ module "mc02" {
   vm_name = "mc02"
 
   cores  = 4
-  memory = 10240
+  memory = 12288
 
   disks = [
     {
