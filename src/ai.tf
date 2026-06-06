@@ -39,3 +39,23 @@ module "openclaw01" {
   ip_address = "10.15.1.227/28"
   gateway    = "10.15.1.225"
 }
+
+module "nanoclaw01" {
+  source  = "./modules/virtual-machine"
+  vm_name = "nanoclaw01"
+
+  cores  = 4
+  memory = 4196
+
+  disks = [
+    {
+      size = 25
+      datastore_id = "nvme-lvm"
+    }
+  ]
+
+  vlan_tag = 1009
+
+  ip_address = "10.15.1.228/28"
+  gateway    = "10.15.1.225"
+}
