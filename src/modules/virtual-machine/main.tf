@@ -1,6 +1,6 @@
 resource "proxmox_virtual_environment_vm" "vm" {
   name      = var.vm_name
-  node_name = "proxmox01"
+  node_name = var.node_name
 
   clone {
     vm_id = 106 # deb12-template
