@@ -74,12 +74,14 @@ module "kube04" {
   source  = "./modules/virtual-machine"
   vm_name = "kube04"
 
-  # Dedicated Wazuh node - proxmox02 has the most free RAM of the 3 online
-  # hosts (kube01-03 are already near their 6GB memory ceiling)
+  # Dedicated Wazuh node. proxmox02 has the most free RAM of the 3 online
+  # hosts (kube01-03 are already near their 6GB memory ceiling), but it also
+  # hosts mc02 (12GB), so 8GB keeps the host within its 31GB budget when both
+  # are running.
   node_name = "proxmox02"
 
   cores  = 4
-  memory = 16384
+  memory = 8192
 
   disks = [
     {
