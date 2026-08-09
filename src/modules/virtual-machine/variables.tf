@@ -2,6 +2,12 @@ variable "vm_name" {
   type = string
 }
 
+variable "node_name" {
+  type        = string
+  default     = "proxmox01"
+  description = "Proxmox node to place this VM on"
+}
+
 variable "cores" {
   type    = number
   default = 2
