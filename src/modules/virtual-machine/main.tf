@@ -41,6 +41,8 @@ resource "proxmox_virtual_environment_vm" "vm" {
   }
 
   initialization {
+    datastore_id = "local-lvm" # Pin explicitly: provider default drifts in/out of state across versions
+
     dns {
       servers = var.dns_servers
     }
