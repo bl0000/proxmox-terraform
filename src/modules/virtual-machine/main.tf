@@ -3,7 +3,8 @@ resource "proxmox_virtual_environment_vm" "vm" {
   node_name = var.node_name
 
   clone {
-    vm_id = 106 # deb12-template
+    vm_id     = 106 # deb12-template
+    node_name = "proxmox01" # template only lives here — required for cross-node clones
   }
 
   agent {
