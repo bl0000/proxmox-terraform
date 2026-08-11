@@ -79,7 +79,7 @@ module "kube04" {
 
   disks = [
     {
-      size = 40
+      size = 60
       datastore_id = "nvme-lvm"
     },
     {
