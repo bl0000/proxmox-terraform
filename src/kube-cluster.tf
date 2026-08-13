@@ -50,8 +50,8 @@ module "kube03" {
   source  = "./modules/virtual-machine"
   vm_name = "kube03"
 
-  cores  = 2
-  memory = 6144
+  cores  = 4
+  memory = 10240
 
   disks = [
     {
