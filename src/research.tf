@@ -7,7 +7,7 @@ module "research01" {
 
   disks = [
     {
-      size         = 50
+      size         = 100
       datastore_id = "nvme-lvm"
     }
   ]
