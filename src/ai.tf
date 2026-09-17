@@ -69,7 +69,7 @@ module "claude01" {
 
   disks = [
     {
-      size = 25
+      size = 35
       datastore_id = "nvme-lvm"
     }
   ]
