@@ -2,7 +2,7 @@
 # labplane guests, no pool. Temporarily on VLAN 1020 (10.15.8.0/22), outside
 # labplane's IPAM range (10.15.8.20-10.15.11.250); re-address to VLAN 1012
 # (10.15.12.0/24) when the network prep lands. They must never share a node.
-# onboot is set by hand/Ansible until the module exposes it (see MR notes).
+# onboot: the bpg provider defaults on_boot to true (checked in the plan).
 
 module "sem01" {
   source    = "./modules/virtual-machine"
