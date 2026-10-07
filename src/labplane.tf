@@ -15,8 +15,8 @@ module "labplane01" {
     }
   ]
 
-  vlan_tag = 1009
+  vlan_tag = 1012
 
-  ip_address = "10.15.1.232/28"
-  gateway    = "10.15.1.225"
+  ip_address = "10.15.12.10/24"
+  gateway    = "10.15.12.1"
 }
