@@ -14,7 +14,7 @@ module "dns01" {
   cores  = 1
   memory = 512
 
-  disks = [{ size = 8, datastore_id = "nvme-lvm" }]
+  disks = [{ size = 20, datastore_id = "nvme-lvm" }] # the template disk is 20G and cannot shrink
 
   vlan_tag   = 1012
   ip_address = "10.15.12.11/24"
@@ -29,7 +29,7 @@ module "dns02" {
   cores  = 1
   memory = 512
 
-  disks = [{ size = 8, datastore_id = "nvme-lvm" }]
+  disks = [{ size = 20, datastore_id = "nvme-lvm" }] # the template disk is 20G and cannot shrink
 
   vlan_tag   = 1012
   ip_address = "10.15.12.12/24"
