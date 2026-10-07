@@ -29,7 +29,7 @@ module "zbx01" {
 
   disks = [{ size = 30, datastore_id = "nvme-lvm" }]
 
-  vlan_tag   = 1020
-  ip_address = "10.15.8.11/22"
-  gateway    = "10.15.8.1"
+  vlan_tag   = 1012
+  ip_address = "10.15.12.20/24"
+  gateway    = "10.15.12.1"
 }
