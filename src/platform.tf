@@ -1,7 +1,7 @@
 # Platform guests (docs/architecture-review.md §3.3 in labplane). Pets: not
-# labplane guests, no pool. Temporarily on VLAN 1020 (10.15.8.0/22), outside
-# labplane's IPAM range (10.15.8.20-10.15.11.250); re-address to VLAN 1012
-# (10.15.12.0/24) when the network prep lands. They must never share a node.
+# labplane guests, no pool. Moving from VLAN 1020 (10.15.8.0/22) onto VLAN 1012
+# Platform (10.15.12.0/24, gateway fw01 .1; address plan in review §1.2) one
+# at a time. They must never share a node.
 # onboot: the bpg provider defaults on_boot to true (checked in the plan).
 
 module "sem01" {
@@ -14,9 +14,9 @@ module "sem01" {
 
   disks = [{ size = 20, datastore_id = "nvme-lvm" }]
 
-  vlan_tag   = 1020
-  ip_address = "10.15.8.10/22"
-  gateway    = "10.15.8.1"
+  vlan_tag   = 1012
+  ip_address = "10.15.12.21/24"
+  gateway    = "10.15.12.1"
 }
 
 module "zbx01" {
