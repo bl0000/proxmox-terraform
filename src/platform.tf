@@ -14,9 +14,10 @@ module "sem01" {
 
   disks = [{ size = 20, datastore_id = "nvme-lvm" }]
 
-  vlan_tag   = 1012
-  ip_address = "10.15.12.21/24"
-  gateway    = "10.15.12.1"
+  vlan_tag    = 1012
+  ip_address  = "10.15.12.21/24"
+  dns_servers = ["10.15.12.11", "10.15.12.12"] # dns01, dns02 (row 4); dc01 answers ad.* through their forward
+  gateway     = "10.15.12.1"
 }
 
 module "zbx01" {
@@ -29,7 +30,8 @@ module "zbx01" {
 
   disks = [{ size = 30, datastore_id = "nvme-lvm" }]
 
-  vlan_tag   = 1012
-  ip_address = "10.15.12.20/24"
-  gateway    = "10.15.12.1"
+  vlan_tag    = 1012
+  ip_address  = "10.15.12.20/24"
+  dns_servers = ["10.15.12.11", "10.15.12.12"] # dns01, dns02 (row 4); dc01 answers ad.* through their forward
+  gateway     = "10.15.12.1"
 }
