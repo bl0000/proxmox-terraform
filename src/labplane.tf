@@ -17,6 +17,7 @@ module "labplane01" {
 
   vlan_tag = 1012
 
-  ip_address = "10.15.12.10/24"
-  gateway    = "10.15.12.1"
+  ip_address  = "10.15.12.10/24"
+  dns_servers = ["10.15.12.11", "10.15.12.12"] # dns01, dns02 (row 4); dc01 answers ad.* through their forward
+  gateway     = "10.15.12.1"
 }
